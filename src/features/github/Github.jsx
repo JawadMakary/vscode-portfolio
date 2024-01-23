@@ -6,16 +6,16 @@ import { useLoaderData } from "react-router";
 
 function Github() {
   const [user, repos] = useLoaderData();
-  console.log(user, repos);
-  const repoInfo = repos.filter((r) => r.stargazers_count > 0);
+  // console.log( repos);
+  const repoInfo = repos.slice(0, 8);
   const theme = {
     dark: ["#161B22", "#0e4429", "#006d32", "#26a641", "#39d353"],
   };
-
+  // console.log(repoInfo);
   return (
     <HelmetProvider>
-      <Helmet>
-        <title>Manav Shete | Github</title>
+      <Helmet> 
+        <title>Jawad Makary | Github</title>
       </Helmet>
       <div className="space-y-8 bg-mainBg p-4 md:p-8">
         <div className="flex h-24 max-w-full items-center justify-center gap-x-5 divide-x-2 divide-accentColor  rounded-lg bg-articleBg">
@@ -40,7 +40,7 @@ function Github() {
           </div>
           <div className="hidden pl-2 text-textColor   md:block ">
             <h2 className="md:text-2xl">
-              {user ? user.bio : "I love writing frontend."}
+              {user ? user.bio : ""}
             </h2>
           </div>
         </div>
@@ -60,7 +60,7 @@ function Github() {
         </div>
         <div className="h-full w-full  text-textColor">
           <ActivityCalendar
-            username="manavss"
+            username="JawadMakary"
             fontSize={17}
             theme={theme}
             hideColorLegend
